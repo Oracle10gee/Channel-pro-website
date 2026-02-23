@@ -3,29 +3,35 @@
 
   <div class="container">
     <div class="footer-grid">
-      <!-- Brand -->
+      <!-- Brand with real logo -->
       <div class="footer-brand">
         <div class="footer-logo">
-          <div class="footer-logo-mark">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="28" height="28" rx="8" fill="url(#footerLogoGrad)"/>
-              <path d="M7 14C7 10.134 10.134 7 14 7V7C17.866 7 21 10.134 21 14V14C21 17.866 17.866 21 14 21V21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="14" cy="21" r="1.5" fill="white"/>
-              <defs>
-                <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#2563EB"/>
-                  <stop offset="1" stop-color="#7C3AED"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <span class="footer-logo-text">Channel<span class="footer-logo-accent">Pro</span></span>
+          <img src="assets/channelpro-logo.png" alt="ChannelPro" class="footer-logo-img" />
         </div>
         <p class="footer-tagline">
           Perfect Hospitality Solutions. Automating businesses across Africa with world-class software.
         </p>
         <div class="footer-socials">
-          <a *ngFor="let s of socials" [href]="s.href" target="_blank" class="footer-social" [attr.aria-label]="s.label" [innerHTML]="s.icon"></a>
+          <!-- Facebook -->
+          <a href="http://www.facebook.com/ChannelProNG" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="http://www.twitter.com/ChannelPro_NG" target="_blank" rel="noopener" class="footer-social" aria-label="Twitter / X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="http://www.instagram.com/channelprong" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
         </div>
       </div>
 
