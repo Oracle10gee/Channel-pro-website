@@ -1,114 +1,101 @@
-/* Stats section keeps a dark branded background — it's a great visual break */
+/* Dark green visual break — matches brand identity */
 .stats-section {
   padding: var(--section-padding);
   position: relative;
-  background: linear-gradient(135deg, #003D6B 0%, #0170B9 50%, #015A96 100%);
+  background: linear-gradient(135deg, #0F2808 0%, #1C5409 50%, #143D07 100%);
   overflow: hidden;
 }
 
 .stats-section::before, .stats-section::after {
   content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  position: absolute; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(61, 181, 26, 0.35), transparent);
 }
 .stats-section::before { top: 0; }
 .stats-section::after  { bottom: 0; }
 
-.stats-bg { display: none; }
+/* Subtle radial glow */
+.stats-section .stats-bg { display: none; }
 
-/* Header */
+/* ---- Header ---- */
 .stats-header { text-align: center; margin-bottom: 56px; }
 
-.stats-label { justify-content: center; }
-.stats-label::before { display: none; }
-.stats-label::after {
+/* Override global .section-label inside dark strip */
+.stats-header .section-label {
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+.stats-header .section-label::before { display: none; }
+.stats-header .section-label::after {
   content: '';
   display: block;
-  width: 22px;
-  height: 2px;
-  background: rgba(255,255,255,0.5);
+  width: 22px; height: 2px;
+  background: rgba(255, 255, 255, 0.35);
   border-radius: 2px;
 }
 
-/* Override section-label color inside dark section */
-.stats-header .section-label { color: rgba(255,255,255,0.75); }
-.stats-header .section-label::before, .stats-header .section-label::after { background: rgba(255,255,255,0.4); }
-.stats-header .section-title { color: #fff; }
-.stats-header .section-title span { background: linear-gradient(90deg, #fff 0%, #a8d8f8 100%); }
+/* Override global .section-title inside dark strip */
+.stats-header .section-title {
+  color: #fff;
+}
 
-/* Grid */
+/* FIX: .gradient-text inside dark strip — reset & re-apply with visible colours */
+.stats-header .section-title .gradient-text {
+  background: linear-gradient(90deg, #a8f07a 0%, #d4f9b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Grid ---- */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Stat Item */
+/* ---- Stat Item ---- */
 .stat-item {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.04);
   padding: 48px 28px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
   transition: var(--transition);
 }
-
 .stat-item::before { display: none; }
-
-.stat-item:hover {
-  background: rgba(255,255,255,0.1);
-}
+.stat-item:hover { background: rgba(255, 255, 255, 0.09); }
 
 .stat-icon { font-size: 2rem; line-height: 1; }
 
-.stat-number {
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
+.stat-number { display: flex; align-items: baseline; gap: 2px; }
 
+/* Numbers — plain white, clear and large */
 .stat-value {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4vw, 3.25rem);
   font-weight: 800;
-  color: #fff;
   line-height: 1;
   letter-spacing: -0.03em;
-  /* override gradient-text from previous version */
-  background: none !important;
-  -webkit-text-fill-color: #fff !important;
+  /* Reset any inherited gradient-text styling */
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
 }
 
 .stat-suffix {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.7);
-  line-height: 1;
+  font-size: 1.4rem; font-weight: 700;
+  color: rgba(255, 255, 255, 0.65); line-height: 1;
 }
 
-.stat-label {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.stat-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.5;
-}
+.stat-label { font-size: 0.95rem; font-weight: 600; color: #fff; }
+.stat-desc  { font-size: 13px; color: rgba(255, 255, 255, 0.55); line-height: 1.5; }
 
 @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: 1fr; }
-  .stat-item { padding: 36px 24px; }
-}
+@media (max-width: 480px)  { .stats-grid { grid-template-columns: 1fr; } .stat-item { padding: 36px 24px; } }
