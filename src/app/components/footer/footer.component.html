@@ -1,0 +1,84 @@
+<footer class="footer">
+  <div class="footer-top-line"></div>
+
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="8" fill="url(#footerLogoGrad)"/>
+              <path d="M7 14C7 10.134 10.134 7 14 7V7C17.866 7 21 10.134 21 14V14C21 17.866 17.866 21 14 21V21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="14" cy="21" r="1.5" fill="white"/>
+              <defs>
+                <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2563EB"/>
+                  <stop offset="1" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="footer-logo-text">Channel<span class="footer-logo-accent">Pro</span></span>
+        </div>
+        <p class="footer-tagline">
+          Perfect Hospitality Solutions. Automating businesses across Africa with world-class software.
+        </p>
+        <div class="footer-socials">
+          <a *ngFor="let s of socials" [href]="s.href" target="_blank" class="footer-social" [attr.aria-label]="s.label" [innerHTML]="s.icon"></a>
+        </div>
+      </div>
+
+      <!-- Solutions Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Solutions</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of solutions">
+            <a class="footer-link" (click)="scrollTo(link.href)">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Company Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of company">
+            <a class="footer-link" (click)="scrollTo(link.href)">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="footer-col footer-cta-col">
+        <h4 class="footer-col-title">Get Started</h4>
+        <p class="footer-cta-text">
+          Ready to transform your operations? Book a free demo today.
+        </p>
+        <button class="btn btn-primary footer-cta-btn" (click)="scrollTo('#contact')">
+          Book a Demo
+        </button>
+        <div class="footer-badges">
+          <div class="footer-badge">
+            <span>🔒</span>
+            <span>Enterprise Security</span>
+          </div>
+          <div class="footer-badge">
+            <span>☁️</span>
+            <span>Cloud Hosted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© {{ currentYear }} ChannelPro. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a class="footer-bottom-link">Privacy Policy</a>
+        <a class="footer-bottom-link">Terms of Service</a>
+        <a class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

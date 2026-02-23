@@ -1,0 +1,57 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container nav-inner">
+    <!-- Logo -->
+    <a class="logo" (click)="scrollTo('#home')">
+      <div class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="8" fill="url(#logoGrad)"/>
+          <path d="M7 14C7 10.134 10.134 7 14 7V7C17.866 7 21 10.134 21 14V14C21 17.866 17.866 21 14 21V21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="14" cy="21" r="1.5" fill="white"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2563EB"/>
+              <stop offset="1" stop-color="#7C3AED"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">Channel<span class="logo-accent">Pro</span></span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav-links">
+      <li *ngFor="let link of navLinks">
+        <a class="nav-link" (click)="scrollTo(link.href)">{{ link.label }}</a>
+      </li>
+    </ul>
+
+    <!-- CTA Button -->
+    <div class="nav-cta">
+      <button class="btn btn-primary nav-btn" (click)="scrollTo('#contact')">
+        Get Started
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <ul class="mobile-nav-links">
+      <li *ngFor="let link of navLinks">
+        <a class="mobile-nav-link" (click)="scrollTo(link.href)">{{ link.label }}</a>
+      </li>
+    </ul>
+    <button class="btn btn-primary mobile-cta-btn" (click)="scrollTo('#contact')">
+      Book Appointment
+    </button>
+  </div>
+</nav>
