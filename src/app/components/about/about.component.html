@@ -1,0 +1,65 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Content -->
+      <div class="about-content">
+        <span class="section-label">About ChannelPro</span>
+        <h2 class="section-title">
+          A Leading Software Firm<br>
+          <span class="gradient-text">Passionate About Quality</span>
+        </h2>
+        <p class="about-desc">
+          We are a leading software development firm specializing in delivering high-quality,
+          custom software solutions to hospitality businesses and enterprises across Africa.
+          We focus on ERP, CRM, and Business Intelligence — transforming how organizations
+          manage their operations, serve customers, and grow revenue.
+        </p>
+        <p class="about-desc">
+          Our all-in-one platform is budget-friendly by design, bundling everything you need —
+          daily operations management, sales outlets, comprehensive reporting, customer-facing
+          software, cloud storage, and a team of certified consultants — into one cohesive system.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>All-in-one, budget-friendly package</span>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Custom ERP, CRM & Business Intelligence</span>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Certified consultant support team</span>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Secure cloud storage & data management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Pillars Grid -->
+      <div class="about-pillars">
+        <div class="pillar-card" *ngFor="let p of pillars">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path [attr.d]="p.icon"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">{{ p.title }}</h3>
+          <p class="pillar-desc">{{ p.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

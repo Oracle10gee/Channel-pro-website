@@ -1,0 +1,83 @@
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <!-- Header -->
+    <div class="testimonials-header">
+      <span class="section-label test-label">Testimonials</span>
+      <h2 class="section-title">
+        Trusted by Businesses<br>
+        <span class="gradient-text">Across the Continent</span>
+      </h2>
+      <p class="section-subtitle" style="margin: 16px auto 0;">
+        Hear from the professionals whose businesses have been transformed by ChannelPro.
+      </p>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-wrapper">
+      <!-- Navigation arrows -->
+      <button class="slider-arrow arrow-prev" (click)="prev()" aria-label="Previous">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- Testimonial cards -->
+      <div class="slider-track">
+        <div class="testimonial-card" *ngFor="let t of testimonials; let i = index"
+          [class.active]="i === activeIndex"
+          [class.prev]="i === (activeIndex - 1 + testimonials.length) % testimonials.length"
+          [class.next]="i === (activeIndex + 1) % testimonials.length">
+
+          <!-- Quote icon -->
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M9.33 20.67C7.78 19.12 7 17.11 7 14.67c0-4.44 2.89-7.78 8.67-10L17 7.33c-3.56 1.34-5.44 3.34-5.67 6h2C15 13.33 16 14.44 16 16s-1 2.67-2.67 2.67c-.88 0-1.67-.33-2.33-1-.67-.67-1.67-1-1.67 3zm12 0C19.78 19.12 19 17.11 19 14.67c0-4.44 2.89-7.78 8.67-10L29 7.33c-3.56 1.34-5.44 3.34-5.67 6h2C27 13.33 28 14.44 28 16s-1 2.67-2.67 2.67c-.88 0-1.67-.33-2.33-1-.67-.67-1.67-1-1.67 3z" fill="url(#quoteGrad)" opacity="0.6"/>
+              <defs>
+                <linearGradient id="quoteGrad" x1="7" y1="7" x2="29" y2="21" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2563EB"/>
+                  <stop offset="1" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Stars -->
+          <div class="stars">
+            <svg *ngFor="let s of stars(t.rating)" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+
+          <!-- Text -->
+          <blockquote class="testimonial-text">"{{ t.text }}"</blockquote>
+
+          <!-- Author -->
+          <div class="testimonial-author">
+            <div class="author-avatar" [style.background]="t.avatarColor">
+              {{ t.avatar }}
+            </div>
+            <div class="author-info">
+              <strong class="author-name">{{ t.name }}</strong>
+              <span class="author-role">{{ t.role }} · {{ t.company }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-arrow arrow-next" (click)="next()" aria-label="Next">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="slider-dots">
+      <button class="dot-btn" *ngFor="let t of testimonials; let i = index"
+        [class.active]="i === activeIndex"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+</section>
